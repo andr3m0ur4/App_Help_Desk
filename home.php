@@ -28,7 +28,7 @@
 			</nav>
 		</header>
 
-		<main class="container">    
+		<main class="container">
 			<div class="row">
 				<div class="card-home">
 					<div class="card">
