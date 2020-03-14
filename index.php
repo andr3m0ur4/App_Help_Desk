@@ -42,7 +42,13 @@
 										Usuário ou senha inválido(s)
 									</div>
 								<?php endif; ?>
-								
+
+								<?php if (isset($_GET['login']) AND $_GET['login'] == 'erro2') : ?>
+									<div class="text-danger">
+										Faça login antes de acessar uma página protegida
+									</div>
+								<?php endif; ?>
+
 								<button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
 							</form>
 						</div>
