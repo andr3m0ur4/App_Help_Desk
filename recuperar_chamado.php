@@ -21,6 +21,13 @@
 	foreach ($chamados as $chamado) {
 		$dados = explode('#', $chamado);
 
+		if ($_SESSION['perfil_id'] == 2) {
+			// exibir somente o chamado, caso ele tenha sido criado por esse usuário
+			if ($_SESSION['id'] != $dados[0]) {
+				continue;
+			}
+		}
+
 		if (count($dados) < 3) {
 			continue;
 		}

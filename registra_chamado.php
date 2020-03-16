@@ -1,7 +1,9 @@
 <?php 
 
+	session_start();
+
 	// montando o texto
-	$texto = implode('#', str_replace('#', '-', $_POST)) . PHP_EOL;
+	$texto = $_SESSION['id'] . '#' . implode('#', str_replace('#', '-', $_POST)) . PHP_EOL;
 
 	// abrindo o arquivo
 	$arquivo = fopen('arquivo.hd', 'a');
