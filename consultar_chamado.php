@@ -1,4 +1,5 @@
 <?php require_once 'validador_acesso.php'; ?>
+<?php require_once 'recuperar_chamado.php'; ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -28,7 +29,7 @@
 			</nav>
 		</header>
 
-		<main class="container">    
+		<main class="container">
 			<div class="row">
 				<div class="card-consultar-chamado">
 					<div class="card">
@@ -38,23 +39,17 @@
 						
 						<div class="card-body">
 							
-							<div class="card mb-3 bg-light">
-								<div class="card-body">
-									<h5 class="card-title">Título do chamado...</h5>
-									<h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-									<p class="card-text">Descrição do chamado...</p>
-
+							<?php foreach ($chamado_dados as $dados) : ?>
+								
+								<div class="card mb-3 bg-light">
+									<div class="card-body">
+										<h5 class="card-title"><?= $dados[0] ?></h5>
+										<h6 class="card-subtitle mb-2 text-muted"><?= $dados[1] ?></h6>
+										<p class="card-text"><?= $dados[2] ?></p>
+									</div>
 								</div>
-							</div>
 
-							<div class="card mb-3 bg-light">
-								<div class="card-body">
-									<h5 class="card-title">Título do chamado...</h5>
-									<h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-									<p class="card-text">Descrição do chamado...</p>
-
-								</div>
-							</div>
+							<?php endforeach; ?>
 
 							<div class="row mt-5">
 								<div class="col-6">
